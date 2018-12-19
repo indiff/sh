@@ -8,7 +8,12 @@ script for os
 yum install expect
 ```
 
-### 2. 编辑 /etc/hosts文件
+### 2. 生成秘钥
+```
+ssh-keygen
+```
+
+### 3. 编辑 /etc/hosts文件
 ```
 vi /etc/hosts
 
@@ -19,7 +24,7 @@ vi /etc/hosts
 192.168.1.5 test5
 ```
 
-### 3. 执行脚本
+### 4. 执行脚本
 ```
 curl -s https://raw.githubusercontent.com/indiff/sh/master/nopass2.sh | sh 
 ```
