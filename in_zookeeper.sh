@@ -1,29 +1,29 @@
-if [ $# == 0 ];then
-	echo "please pointed config location!"
-	exit 1;
-fi
-#confPath=$1
+# if [ $# == 0 ];then
+# 	echo "please pointed config location!"
+# 	exit 1;
+# fi
+# #confPath=$1
 
-confPath=/data/zookeeper
-mkdir -p $confPath
+# confPath=/data/zookeeper
+# mkdir -p $confPath
 
-ips=`hostname -i`
-for ip in ${ips[@]}
-do
-        for line in $(cat $confPath)
-        do
-                result=$(echo $line | grep "${ip}")
-                if [ "$result" != "" ]
-                then
-                        myid=$(echo $line|cut -d = -f 1 |cut -d . -f 2)
-                fi
-        done
-done
+# ips=`hostname -i`
+# for ip in ${ips[@]}
+# do
+#         for line in $(cat $confPath)
+#         do
+#                 result=$(echo $line | grep "${ip}")
+#                 if [ "$result" != "" ]
+#                 then
+#                         myid=$(echo $line|cut -d = -f 1 |cut -d . -f 2)
+#                 fi
+#         done
+# done
 
-if [ !$myid ];then
-	echo "please check zoo.cfg!"
-	exit 1;
-fi
+# if [ !$myid ];then
+# 	echo "please check zoo.cfg!"
+# 	exit 1;
+# fi
 #################################zookeeper 部署及相关python包部署##################################
 
 wget http://archive.apache.org/dist/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz -O /usr/local/zookeeper-3.4.8.tar.gz
