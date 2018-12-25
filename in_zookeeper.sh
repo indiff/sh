@@ -23,7 +23,7 @@ if [ !$myid ];then
 fi
 #################################zookeeper 部署及相关python包部署##################################
 
-wget http://192.168.10.152/hadoop/zookeeper-3.4.8.tar.gz -O /usr/local/zookeeper-3.4.8.tar.gz
+wget http://archive.apache.org/dist/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz -O /usr/local/zookeeper-3.4.8.tar.gz
 tar -xzf /usr/local/zookeeper-3.4.8.tar.gz -C /usr/local
 ln -s /usr/local/zookeeper-3.4.8 /usr/local/zookeeper
 rm -rf /usr/local/zookeeper-3.4.8.tar.gz
