@@ -2,7 +2,10 @@ if [ $# == 0 ];then
 	echo "please pointed config location!"
 	exit 1;
 fi
-confPath=$1
+#confPath=$1
+
+confPath=/data/zookeeper
+mkdir -p $confPath
 
 ips=`hostname -i`
 for ip in ${ips[@]}
